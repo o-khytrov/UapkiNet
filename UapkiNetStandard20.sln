@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UapkiNetStandard20", "src\UapkiNetStandard20\UapkiNetStandard20.csproj", "{ED114208-5E6E-449A-96B2-3510D53D6708}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UapkiNet", "src\UapkiNet\UapkiNet.csproj", "{ED114208-5E6E-449A-96B2-3510D53D6708}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UapkiNetStandard20.Example.ConsoleApp", "example\UapkiNetStandard20.Example.Console.App\UapkiNetStandard20.Example.ConsoleApp.csproj", "{9CD4B7C1-6704-4D35-A9A5-A0938698FAA2}"
 EndProject
