@@ -1,4 +1,6 @@
-﻿namespace UapkiNetStandard20.Models.Requests.RequestParameters
+﻿using UapkiNetStandard20.Models.Requests.RequestParameters;
+
+namespace UapkiNetStandard20.Models.Requests
 {
     internal class ChangePasswordRequest: BaseRequest<ChangePasswordParameters>
     {

@@ -352,3 +352,5 @@ MigrationBackup/
 #Custom
 example/UapkiNetStandard20.Example.Console.App/certs
 example/UapkiNetStandard20.Example.Console.App/libraries
+# rider
+.idea
