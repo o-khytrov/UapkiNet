@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 // Note: Code in this file is maintained manually.
 
-namespace UapkiNetStandard20.Common
+namespace UapkiNet.Common
 {
     /// <summary>
     /// Exception indicating an attempt to load unmanaged library designated for a different architecture

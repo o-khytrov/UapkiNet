@@ -1,11 +1,9 @@
 ﻿using System;
-#if NETSTANDARD2_0
-using System.Runtime.InteropServices;
-#endif
+using System.IO;
 
 // Note: Code in this file is maintained manually.
 
-namespace UapkiNetStandard20.Common
+namespace UapkiNet.Common
 {
     /// <summary>
     /// Utility class for runtime platform detection
@@ -15,29 +13,17 @@ namespace UapkiNetStandard20.Common
         /// <summary>
         /// True if 64-bit runtime is used
         /// </summary>
-        public static bool Uses64BitRuntime
-        {
-            get
-            {
-                return (IntPtr.Size == 8);
-            }
-        }
+        public static bool Uses64BitRuntime => (IntPtr.Size == 8);
 
         /// <summary>
         /// True if 32-bit runtime is used
         /// </summary>
-        public static bool Uses32BitRuntime
-        {
-            get
-            {
-                return (IntPtr.Size == 4);
-            }
-        }
+        public static bool Uses32BitRuntime => (IntPtr.Size == 4);
 
         /// <summary>
         /// True if runtime platform is Windows
         /// </summary>
-        private static bool _isWindows = false;
+        private static bool _isWindows;
 
         /// <summary>
         /// True if runtime platform is Windows
@@ -54,7 +40,7 @@ namespace UapkiNetStandard20.Common
         /// <summary>
         /// True if runtime platform is Linux
         /// </summary>
-        private static bool _isLinux = false;
+        private static bool _isLinux;
 
         /// <summary>
         /// True if runtime platform is Linux
@@ -71,7 +57,7 @@ namespace UapkiNetStandard20.Common
         /// <summary>
         /// True if runtime platform is Mac OS X
         /// </summary>
-        private static bool _isMacOsX = false;
+        private static bool _isMacOsX;
 
         /// <summary>
         /// True if runtime platform is Mac OS X
@@ -89,41 +75,6 @@ namespace UapkiNetStandard20.Common
         /// Size of native (unmanaged) long type
         /// </summary>
         private static int _nativeULongSize = 0;
-
-        /// <summary>
-        /// Size of native (unmanaged) long type.
-        /// This property is used by HighLevelAPI to choose correct set of LowLevelAPIs.
-        /// Value of this property can be changed if needed.
-        /// </summary>
-        public static int NativeULongSize
-        {
-            get
-            {
-                if (_nativeULongSize != 0)
-                    return _nativeULongSize;
-
-                if (IsLinux || IsMacOsX)
-                {
-                    // CK_ULONG is 4 bytes long on 32-bit Unix and 8 bytes long 64-bit Unix
-                    _nativeULongSize = IntPtr.Size;
-                }
-                else
-                {
-                    // On Windows CK_ULONG is always 4 bytes long
-                    _nativeULongSize = 4;
-                }
-
-                return _nativeULongSize;
-            }
-            set
-            {
-                if ((value != 4) && (value != 8))
-                    throw new ArgumentException();
-
-                // Automatic value detection can be overriden if needed
-                _nativeULongSize = value;
-            }
-        }
 
         /// <summary>
         /// Controls the alignment of unmanaged struct fields
@@ -153,6 +104,7 @@ namespace UapkiNetStandard20.Common
 
                 return _structPackingSize;
             }
+
             set
             {
                 if ((value != 0) && (value != 1))
@@ -173,7 +125,6 @@ namespace UapkiNetStandard20.Common
                 return;
 
 #if NETSTANDARD2_0
-
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 _isWindows = true;

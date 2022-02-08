@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace UapkiNetStandard20.Common
+namespace UapkiNet.Common
 {
     internal class Delegates
     {

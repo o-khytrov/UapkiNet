@@ -1,4 +1,4 @@
-﻿namespace UapkiNetStandard20.Models
+﻿namespace UapkiNet.Models
 {
     public class StorageInfo
     {

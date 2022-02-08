@@ -1,8 +1,8 @@
 ﻿using System;
-using UapkiNetStandard20.Enums;
-using UapkiNetStandard20.Models.Verifying;
+using UapkiNet.Enums;
+using UapkiNet.Models.Verifying;
 
-namespace UapkiNetStandard20.Models.Requests
+namespace UapkiNet.Models.Requests
 {
     internal class VerifyRequest: BaseRequest<Verify>
     {

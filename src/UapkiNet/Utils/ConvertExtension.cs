@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UapkiNetStandard20.Utils
+namespace UapkiNet.Utils
 {
     internal class ConvertExtension
     {

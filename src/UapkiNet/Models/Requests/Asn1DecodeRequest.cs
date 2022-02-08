@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using UapkiNetStandard20.Models.Asn1;
-using UapkiNetStandard20.Models.Requests.RequestParameters;
+using UapkiNet.Models.Asn1;
+using UapkiNet.Models.Requests.RequestParameters;
 
-namespace UapkiNetStandard20.Models.Requests
+namespace UapkiNet.Models.Requests
 {
     internal class Asn1DecodeRequest: BaseRequest<Asn1DecodeParameters>
     {

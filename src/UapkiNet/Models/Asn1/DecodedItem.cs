@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using UapkiNetStandard20.Utils;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using UapkiNet.Utils;
 
-namespace UapkiNetStandard20.Models.Asn1
+namespace UapkiNet.Models.Asn1
 {
     public class DecodedItem
     {

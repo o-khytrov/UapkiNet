@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models.Requests.RequestParameters
+namespace UapkiNet.Models.Requests.RequestParameters
 {
     internal class CrlInfoParameters
     {

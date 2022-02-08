@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models.Certificate
+namespace UapkiNet.Models.Certificate
 {
     public class ValidityTimeStamp
     {

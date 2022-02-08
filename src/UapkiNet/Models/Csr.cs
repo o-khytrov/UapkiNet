@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models
+namespace UapkiNet.Models
 {
     internal class Csr
     {

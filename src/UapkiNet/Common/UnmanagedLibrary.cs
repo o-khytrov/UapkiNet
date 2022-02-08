@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
-namespace UapkiNetStandard20.Common
+namespace UapkiNet.Common
 {
     public static class UnmanagedLibrary
     {

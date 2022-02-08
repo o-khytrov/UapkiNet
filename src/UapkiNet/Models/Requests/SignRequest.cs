@@ -1,6 +1,6 @@
-﻿using UapkiNetStandard20.Models.Signing;
+﻿using UapkiNet.Models.Signing;
 
-namespace UapkiNetStandard20.Models.Requests
+namespace UapkiNet.Models.Requests
 {
     internal class SignRequest: BaseRequest<Sign>
     {

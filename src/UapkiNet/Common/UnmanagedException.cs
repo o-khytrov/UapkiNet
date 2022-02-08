@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace UapkiNetStandard20.Common
+namespace UapkiNet.Common
 {
     /// <summary>
     /// Exception indicating that unmanaged function has returned error

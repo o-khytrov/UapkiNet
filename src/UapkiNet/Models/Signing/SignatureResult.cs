@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models.Signing
+namespace UapkiNet.Models.Signing
 {
     public class SignatureResult
     {

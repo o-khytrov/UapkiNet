@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 // Note: Code in this file is maintained manually.
 
-namespace UapkiNetStandard20.Common
+namespace UapkiNet.Common
 {
     /// <summary>
     /// Imported native methods

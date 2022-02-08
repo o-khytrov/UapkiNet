@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using UapkiNetStandard20.Utils;
+﻿using System;
+using Newtonsoft.Json;
+using UapkiNet.Utils;
 
-namespace UapkiNetStandard20.Models.Asn1
+namespace UapkiNet.Models.Asn1
 {
     public class ItemToDecode
     {

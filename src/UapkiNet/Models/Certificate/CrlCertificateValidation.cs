@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
-using UapkiNetStandard20.Enums;
-using UapkiNetStandard20.Interfaces;
+﻿using System;
+using Newtonsoft.Json;
+using UapkiNet.Enums;
+using UapkiNet.Interfaces;
 
-namespace UapkiNetStandard20.Models.Certificate
+namespace UapkiNet.Models.Certificate
 {
     public class CrlCertificateValidation : ICertificateValidation
     {

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models.Crl
+namespace UapkiNet.Models.Crl
 {
     public class CrlStorageRecord
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UapkiNetStandard20.Interfaces;
-using UapkiNetStandard20.Models.Signing;
+using UapkiNet.Interfaces;
+using UapkiNet.Models.Signing;
 
-namespace UapkiNetStandard20.Models
+namespace UapkiNet.Models
 {
     internal class StoragesList
     {

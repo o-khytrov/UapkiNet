@@ -1,8 +1,8 @@
 ﻿using System;
-using UapkiNetStandard20.Enums;
-using UapkiNetStandard20.Models.Certificate;
+using UapkiNet.Enums;
+using UapkiNet.Models.Certificate;
 
-namespace UapkiNetStandard20.Models.Requests
+namespace UapkiNet.Models.Requests
 {
     internal class VerifyCertificateRequest: BaseRequest<VerifyCertificateParameters>
     {

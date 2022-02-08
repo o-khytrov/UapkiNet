@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
 
-namespace UapkiNetStandard20.Enums
+namespace UapkiNet.Enums
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum RevocationReason

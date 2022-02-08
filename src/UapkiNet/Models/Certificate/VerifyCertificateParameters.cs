@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using UapkiNetStandard20.Enums;
+using UapkiNet.Enums;
 
-namespace UapkiNetStandard20.Models.Certificate
+namespace UapkiNet.Models.Certificate
 {
     internal class VerifyCertificateParameters
     {

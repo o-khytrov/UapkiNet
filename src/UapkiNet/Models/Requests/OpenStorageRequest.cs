@@ -1,6 +1,6 @@
-﻿using UapkiNetStandard20.Interfaces;
+﻿using UapkiNet.Interfaces;
 
-namespace UapkiNetStandard20.Models.Requests
+namespace UapkiNet.Models.Requests
 {
     internal class OpenStorageRequest : BaseRequest<IStorageOpenParameters>
     {

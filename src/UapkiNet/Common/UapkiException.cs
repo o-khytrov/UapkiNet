@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UapkiNetStandard20.Common
+namespace UapkiNet.Common
 {
     [Serializable]
     public class UapkiException: Exception

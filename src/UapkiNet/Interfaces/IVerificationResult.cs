@@ -1,4 +1,4 @@
-﻿namespace UapkiNetStandard20.Interfaces
+﻿namespace UapkiNet.Interfaces
 {
     public interface IVerificationResult
     {

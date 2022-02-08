@@ -1,4 +1,4 @@
-﻿namespace UapkiNetStandard20.Enums
+﻿namespace UapkiNet.Enums
 {
     public enum LogLevel
     {

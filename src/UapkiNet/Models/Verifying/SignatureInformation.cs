@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using UapkiNetStandard20.Enums;
+using Newtonsoft.Json;
+using UapkiNet.Enums;
 
-namespace UapkiNetStandard20.Models.Verifying
+namespace UapkiNet.Models.Verifying
 {
     public class SignatureInformation
     {

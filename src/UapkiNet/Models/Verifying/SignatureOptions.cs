@@ -1,4 +1,4 @@
-﻿namespace UapkiNetStandard20.Models.Verifying
+﻿namespace UapkiNet.Models.Verifying
 {
     public class SignatureOptions
     {

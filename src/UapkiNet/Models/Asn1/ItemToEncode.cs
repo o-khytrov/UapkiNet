@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models.Asn1
+namespace UapkiNet.Models.Asn1
 {
     public class ItemToEncode
     {

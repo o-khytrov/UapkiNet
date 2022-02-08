@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using UapkiNetStandard20.Utils;
+using UapkiNet.Utils;
 
-namespace UapkiNetStandard20.Models.Certificate
+namespace UapkiNet.Models.Certificate
 {
     public class CertificateExtension
     {

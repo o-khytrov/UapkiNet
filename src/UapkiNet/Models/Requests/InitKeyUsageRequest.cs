@@ -1,4 +1,4 @@
-﻿namespace UapkiNetStandard20.Models.Requests
+﻿namespace UapkiNet.Models.Requests
 {
     internal class InitKeyUsageRequest: BaseRequest<object>
     {

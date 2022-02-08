@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using UapkiNetStandard20.Utils;
+using UapkiNet.Utils;
 
-namespace UapkiNetStandard20.Models
+namespace UapkiNet.Models
 {
     internal class Bytes
     {

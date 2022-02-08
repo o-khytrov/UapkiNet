@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models.Crl
+namespace UapkiNet.Models.Crl
 {
     public class CrlInformation
     {

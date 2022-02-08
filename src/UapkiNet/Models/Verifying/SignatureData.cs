@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace UapkiNetStandard20.Models.Verifying
+namespace UapkiNet.Models.Verifying
 {
     public class SignatureData
     {

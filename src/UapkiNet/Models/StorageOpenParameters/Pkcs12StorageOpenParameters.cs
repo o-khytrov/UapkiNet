@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using UapkiNetStandard20.Enums;
-using UapkiNetStandard20.Interfaces;
+using UapkiNet.Enums;
+using UapkiNet.Interfaces;
 
-namespace UapkiNetStandard20.Models.StorageOpenParameters
+namespace UapkiNet.Models.StorageOpenParameters
 {
     public class Pkcs12StorageOpenParameters : IStorageOpenParameters
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using UapkiNetStandard20.Models.Requests.RequestParameters;
+using UapkiNet.Models.Requests.RequestParameters;
 
-namespace UapkiNetStandard20.Models.Requests
+namespace UapkiNet.Models.Requests
 {
     internal class CrlInfoRequest: BaseRequest<CrlInfoParameters>
     {

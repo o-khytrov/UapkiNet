@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using UapkiNetStandard20.Enums;
+﻿using System;
+using Newtonsoft.Json;
+using UapkiNet.Enums;
 
-namespace UapkiNetStandard20.Models.Verifying
+namespace UapkiNet.Models.Verifying
 {
     public class VerificationTimeStamp
     {

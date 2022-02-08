@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using UapkiNetStandard20.Interfaces;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using UapkiNet.Interfaces;
 
-namespace UapkiNetStandard20.Models.Verifying
+namespace UapkiNet.Models.Verifying
 {
     public class CadesOrCmsVerificationResult: IVerificationResult
     {

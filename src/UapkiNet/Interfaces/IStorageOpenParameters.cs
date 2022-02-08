@@ -1,6 +1,6 @@
-﻿using UapkiNetStandard20.Enums;
+﻿using UapkiNet.Enums;
 
-namespace UapkiNetStandard20.Interfaces
+namespace UapkiNet.Interfaces
 {
     public interface IStorageOpenParameters
     {

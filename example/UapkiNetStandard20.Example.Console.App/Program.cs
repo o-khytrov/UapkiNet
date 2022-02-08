@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using UapkiNetStandard20.Enums;
-using UapkiNetStandard20.Models.StorageOpenParameters;
-using UapkiNetStandard20.Models.Signing;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UapkiNet.Enums;
+using UapkiNet.Models.Signing;
+using UapkiNet.Models.StorageOpenParameters;
 
 namespace UapkiNetStandard20.Example.ConsoleApp
 {
@@ -14,7 +14,7 @@ namespace UapkiNetStandard20.Example.ConsoleApp
         static void Main(string[] args)
         {
             var osSafePath = Path.Combine(AppContext.BaseDirectory, "libraries", "x64", "uapki.dll");
-            using (var library = new UapkiNet(osSafePath, DebugLogger))
+            using (var library = new UapkiNet.UapkiNet(osSafePath, DebugLogger))
             {
                 var libraryInfo = library.Version();
                 Console.WriteLine($"Бiблiотека:\t\t{libraryInfo.Name}\nВерсiя:\t\t\t{libraryInfo.Version}");

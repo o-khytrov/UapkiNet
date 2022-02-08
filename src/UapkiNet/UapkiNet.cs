@@ -1,34 +1,37 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using UapkiNetStandard20.Common;
-using UapkiNetStandard20.Enums;
-using UapkiNetStandard20.Interfaces;
-using UapkiNetStandard20.Models;
-using UapkiNetStandard20.Models.Asn1;
-using UapkiNetStandard20.Models.Certificate;
-using UapkiNetStandard20.Models.Crl;
-using UapkiNetStandard20.Models.Requests;
-using UapkiNetStandard20.Models.Requests.RequestParameters;
-using UapkiNetStandard20.Models.Signing;
-using UapkiNetStandard20.Models.Verifying;
-using UapkiNetStandard20.Utils;
+using Newtonsoft.Json;
+using UapkiNet.Common;
+using UapkiNet.Enums;
+using UapkiNet.Interfaces;
+using UapkiNet.Models;
+using UapkiNet.Models.Asn1;
+using UapkiNet.Models.Certificate;
+using UapkiNet.Models.Crl;
+using UapkiNet.Models.Requests;
+using UapkiNet.Models.Requests.RequestParameters;
+using UapkiNet.Models.Signing;
+using UapkiNet.Models.Verifying;
+using UapkiNet.Utils;
 using Empty = System.Object;
 
-namespace UapkiNetStandard20
+namespace UapkiNet
 {
-    public class UapkiNet: IDisposable
+    public class UapkiNet : IDisposable
     {
-        private const int IndexNotFound = -1;
+        private IntPtr _libraryHandle;
 
-        private IntPtr _libraryHandle = IntPtr.Zero;
-        private Delegates _delegates = null;
-        private VersionInformation _versionInformation;
+        private Delegates _delegates;
+
+        private readonly VersionInformation _versionInformation;
+
         private List<Provider> _providers;
+
         private readonly string _libraryAbsolutePath;
+
         private readonly Logger _logger;
 
         public delegate void Logger(LogLevel logLevel, string message, Exception exception = null);
@@ -53,12 +56,12 @@ namespace UapkiNetStandard20
         }
 
         public InitializationInformation Init(
-            string certCachePath = "certs/", 
-            string crlCachePath = "certs/crls/", 
-            string defaultTspUrl = "http://acskidd.gov.ua/services/tsp/", 
-            List<byte[]> trustedCerts = null, 
+            string certCachePath = "certs/",
+            string crlCachePath = "certs/crls/",
+            string defaultTspUrl = "http://acskidd.gov.ua/services/tsp/",
+            List<byte[]> trustedCerts = null,
             bool offline = false
-            )
+        )
         {
             if (!Directory.Exists(certCachePath))
                 Directory.CreateDirectory(certCachePath);
@@ -74,7 +77,7 @@ namespace UapkiNetStandard20
                     CertificateCache = new CertificateCache
                     {
                         Path = certCachePath,
-                        TrustedCertificates = trustedCerts?.Select(s=> Convert.ToBase64String(s))
+                        TrustedCertificates = trustedCerts?.Select(s => Convert.ToBase64String(s))
                     },
                     CrlCache = new CrlCache
                     {
@@ -114,12 +117,12 @@ namespace UapkiNetStandard20
             return providers;
         }
 
-        public List<Provider> GetProviders()
+        private List<Provider> GetProviders()
         {
-            return _providers ?? Process<ProvidersList>(new ProvidersRequest())?.Providers; 
+            return _providers ?? Process<ProvidersList>(new ProvidersRequest())?.Providers;
         }
 
-        public List<Storage> GetProviderStorages(Provider provider)
+        private List<Storage> GetProviderStorages(Provider provider)
         {
             try
             {
@@ -142,7 +145,6 @@ namespace UapkiNetStandard20
                 throw new ArgumentNullException(nameof(openParameters), "Provide Storage open parameters");
 
             //TODO: Implement storageOpenParameters for different storage types
-
 
             var storage = Process<Storage>(new OpenStorageRequest(openParameters));
             if (storage == null)
@@ -190,6 +192,7 @@ namespace UapkiNetStandard20
                     key.SetParentLibrary(this);
                 }
             }
+
             return keys;
         }
 
@@ -213,7 +216,7 @@ namespace UapkiNetStandard20
             }));
         }
 
-        internal void DeleteKey(string keyId) 
+        internal void DeleteKey(string keyId)
         {
             Process<Empty>(new DeleteKeyRequest(keyId));
         }
@@ -242,7 +245,7 @@ namespace UapkiNetStandard20
         #endregion
 
         public IVerificationResult Verify(Verify verify, SignatureFormat format = SignatureFormat.Cms)
-        {        
+        {
             switch (format)
             {
                 case SignatureFormat.Cms:
@@ -360,7 +363,7 @@ namespace UapkiNetStandard20
         {
             var json = request.ToJson();
             _logger?.Invoke(LogLevel.Debug, $"Start sending request:\n{json}");
-            byte* resultPtr = (byte*)_delegates.Process(json);
+            byte* resultPtr = (byte*) _delegates.Process(json);
             string result = null;
             if (resultPtr != null)
             {
@@ -372,9 +375,10 @@ namespace UapkiNetStandard20
                 }
                 finally
                 {
-                    _delegates.JsonFree((IntPtr)resultPtr);
+                    _delegates.JsonFree((IntPtr) resultPtr);
                 }
             }
+
             if (string.IsNullOrWhiteSpace(result))
             {
                 return default;
@@ -383,7 +387,7 @@ namespace UapkiNetStandard20
             var resultModel = JsonConvert.DeserializeObject<CommonResponse<TResponse>>(result);
 
             if (!resultModel.IsSuccess)
-            {    
+            {
                 var ex = new UapkiException(resultModel.ErrorCode, resultModel.Error);
                 _logger?.Invoke(LogLevel.Error, ex.Message, ex);
                 throw ex;
